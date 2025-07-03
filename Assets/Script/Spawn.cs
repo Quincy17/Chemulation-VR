@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour
     public GameObject spherePrefab;
 
     // Fixed spawn position as per your request
-    private Vector3 spawnPosition = new Vector3(-1.58780003f, 0.97299999f, 8.91629982f);
+    private Vector3 spawnPosition = new Vector3(-0.4033f, 1.065f, 7.531f);
 
     // Method to spawn a sphere with a specific tag
     public void SpawnSphere(string tag)
@@ -54,6 +54,26 @@ public class Spawner : MonoBehaviour
         {
             case "ClAtom":
                 return "#36BD37";
+            case "SAtom":
+                return "#9FE00F";
+            case "XeAtom":
+                return "#0F91A7";
+            case "NAtom":
+                return "#0F6FD6";
+            case "OAtom":
+                return "#E20F0F";
+            case "Katom":
+                return "#DA840F";
+            case "FAtom":
+                return "#8C469E";
+            case "HAtom":
+                return "#B0D0D7";
+            case "BAtom":
+                return "#D2A4B8";
+            case "BrAtom":
+                return "#95282D";
+            case "CAtom":
+                return "#708C90";
             default:
                 return "#FFFFFF";
         }
