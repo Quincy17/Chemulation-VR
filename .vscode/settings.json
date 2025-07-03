@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Course VR.sln"
+    "dotnet.defaultSolution": "Chemulation-VR.sln"
 }
