@@ -104,7 +104,7 @@ public class QuestionSpawner : MonoBehaviour
 
     public AtomConnector atomConnector; // Drag dari Inspector
 
-    public void CheckAnswerr()
+    public void CheckAnswer()
     {
         if (currentQuestion == null)
         {

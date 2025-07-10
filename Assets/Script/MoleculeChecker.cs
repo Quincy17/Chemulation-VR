@@ -35,13 +35,13 @@ public class MoleculeChecker : MonoBehaviour
                 {
                     hydrogenCount++;
 
-                    if (slot.CompareTag("Atom12"))
+                    if (slot.CompareTag("Atom 12"))
                         hIn12 = true;
-                    else if (slot.CompareTag("Atom10"))
+                    else if (slot.CompareTag("Atom 10"))
                         hIn10 = true;
-                    else if (slot.CompareTag("Atom15"))  // Cek Atom10
+                    else if (slot.CompareTag("Atom 15"))  // Cek Atom10
                         hIn15 = true;
-                    else if (slot.CompareTag("Atom17"))  // Cek Atom22
+                    else if (slot.CompareTag("Atom 17"))  // Cek Atom22
                         hIn17 = true;
                     else
                         anyHInWrongSlot = true;
