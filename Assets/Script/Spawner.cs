@@ -118,4 +118,30 @@ public class Spawner : MonoBehaviour
 
         return false;
     }
+
+    public void DestroySphere()
+    {
+        // Daftar semua tag atom hasil spawn
+        string[] atomTags = {
+            "ClAtom", "SAtom", "XeAtom", "NAtom", "OAtom",
+            "KAtom", "FAtom", "HAtom", "BAtom", "BrAtom", "CAtom"
+        };
+
+        foreach (string tag in atomTags)
+        {
+            GameObject[] atoms = GameObject.FindGameObjectsWithTag(tag);
+            foreach (GameObject atom in atoms)
+            {
+                Destroy(atom);
+            }
+        }
+
+        // Optional: reset semua slot atom jika kamu pakai AtomSlotTrigger
+        AtomSlotTrigger[] slots = FindObjectsOfType<AtomSlotTrigger>();
+        foreach (AtomSlotTrigger slot in slots)
+        {
+            slot.currentAtom = null;
+        }
+    }
+
 }
