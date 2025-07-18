@@ -169,9 +169,11 @@ public class ButtonManager : MonoBehaviour
     public void OnClosePlayPressed() => uiManager.OnClosePlayPressed();
     public void OnCloseExitPressed() => uiManager.OnCloseExitPressed();
     public void OnExitYesPressed() => uiManager.OnExitYesPressed();
-
+    public void OnAboutPressed() => uiManager.OnAboutPressed();
+    public void OnCloseAboutPressed() => uiManager.OnCloseAboutPressed();
     public void OnNextSlide() => uiManager.OnNextSlide();
     public void OnPreviousSlide() => uiManager.OnPreviousSlide();
+    public void OnStartPressed() => uiManager.OnStartPressed();
 
     // UI Resume
     // public void OnHomeButtonPressed() => homeUIManager.OnHomeButtonPressed();

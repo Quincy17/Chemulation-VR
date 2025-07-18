@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
     [Header("Canvas References")]
     public GameObject mainMenuCanvas;
     public GameObject playCanvas;
+    public GameObject aboutCanvas;
     public GameObject exitCanvas;
 
     [Header("Play Mode Panels & Images")]
@@ -45,9 +46,33 @@ public class UIManager : MonoBehaviour
         UpdatePlayModeSlide();
     }
 
+    public void OnStartPressed(){
+        // Pindahkan kamera ke koordinat yang diinginkan
+        if (rigTransform != null)
+        {
+            rigTransform.position = new Vector3(-0.896f, 0f, 8.138f);
+            rigTransform.rotation = Quaternion.Euler(0, 180f, 0); // atau set rotasi tertentu jika diinginkan
+        }
+    }
+
     public void OnExitPressed()
     {
         StartCoroutine(SwitchCanvas(mainMenuCanvas, exitCanvas));
+    }
+
+    // public void OnCloseExitPressed()
+    // {
+    //     StartCoroutine(SwitchCanvas(exitCanvas, mainMenuCanvas));
+    // }
+    
+    public void OnAboutPressed()
+    {
+        StartCoroutine(SwitchCanvas(mainMenuCanvas, aboutCanvas));
+    }
+
+    public void OnCloseAboutPressed()
+    {
+        StartCoroutine(SwitchCanvas(aboutCanvas, mainMenuCanvas));
     }
 
     public void OnCloseExitPressed()
