@@ -41,9 +41,11 @@ public class UIManager : MonoBehaviour
     // Called by ButtonManager
     public void OnPlayPressed()
     {
-        StartCoroutine(SwitchCanvas(mainMenuCanvas, playCanvas));
-        currentPage = 0;
-        UpdatePlayModeSlide();
+        // StartCoroutine(SwitchCanvas(mainMenuCanvas, playCanvas));
+        // currentPage = 0;
+        // UpdatePlayModeSlide();
+        rigTransform.position = new Vector3(-0.971f, 0f, 8.202f);
+        rigTransform.eulerAngles = new Vector3(0, 180, 0);
     }
 
     public void OnStartPressed(){
