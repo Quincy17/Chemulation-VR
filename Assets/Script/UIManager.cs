@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public GameObject playCanvas;
     public GameObject aboutCanvas;
     public GameObject exitCanvas;
+    public GameObject optionsCanvas;
 
     [Header("Play Mode Panels & Images")]
     public GameObject[] modePanels;         // [Panel]_Mode_1, [Panel]_Mode_2
@@ -66,7 +67,11 @@ public class UIManager : MonoBehaviour
     // {
     //     StartCoroutine(SwitchCanvas(exitCanvas, mainMenuCanvas));
     // }
-    
+    public void OnOptionsPressed()
+    {
+        StartCoroutine(SwitchCanvas(mainMenuCanvas, optionsCanvas));
+    }
+
     public void OnAboutPressed()
     {
         StartCoroutine(SwitchCanvas(mainMenuCanvas, aboutCanvas));
@@ -75,6 +80,11 @@ public class UIManager : MonoBehaviour
     public void OnCloseAboutPressed()
     {
         StartCoroutine(SwitchCanvas(aboutCanvas, mainMenuCanvas));
+    }
+
+    public void OnCloseOptionsPressed()
+    {
+        StartCoroutine(SwitchCanvas(optionsCanvas, mainMenuCanvas));
     }
 
     public void OnCloseExitPressed()

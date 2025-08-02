@@ -1,0 +1,210 @@
+fileFormatVersion: 2
+guid: a07f81a3474a8654691fae960713abd4
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Exit Detail_36
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 0
+        width: 312
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17000dd71e080cb4f81dd287d1b12310
+      internalID: 482822874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Exit Detail_38
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 306
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a138b3c0992ad8c4398be531bf24eb0e
+      internalID: 1496190807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a520d799ec5ca8247af2f7ebb28e66e5
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Exit Detail_0: 227037771
+      Exit Detail_1: 1760204233
+      Exit Detail_10: 540886480
+      Exit Detail_11: 2118773287
+      Exit Detail_12: -885019762
+      Exit Detail_13: -158015108
+      Exit Detail_14: 1520930646
+      Exit Detail_15: 395443671
+      Exit Detail_16: 845208684
+      Exit Detail_17: 1171523743
+      Exit Detail_18: -700370176
+      Exit Detail_19: -1009756868
+      Exit Detail_2: -1986909558
+      Exit Detail_20: 267861024
+      Exit Detail_21: -354952964
+      Exit Detail_22: 1747564346
+      Exit Detail_23: 1513133172
+      Exit Detail_24: -1544771940
+      Exit Detail_25: 701879465
+      Exit Detail_26: 904157321
+      Exit Detail_27: -751207051
+      Exit Detail_28: -2010005850
+      Exit Detail_29: 27853589
+      Exit Detail_3: 985033870
+      Exit Detail_30: 452822054
+      Exit Detail_31: -435124195
+      Exit Detail_32: 1092580784
+      Exit Detail_33: -1504339390
+      Exit Detail_34: -220318467
+      Exit Detail_35: 519212520
+      Exit Detail_36: 482822874
+      Exit Detail_37: -609005892
+      Exit Detail_38: 1496190807
+      Exit Detail_39: 99645276
+      Exit Detail_4: -83617768
+      Exit Detail_40: 257428232
+      Exit Detail_5: 2033883850
+      Exit Detail_6: 1189228471
+      Exit Detail_7: 942718598
+      Exit Detail_8: 24429376
+      Exit Detail_9: 357404206
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

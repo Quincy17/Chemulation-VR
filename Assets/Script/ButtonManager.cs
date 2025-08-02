@@ -174,6 +174,8 @@ public class ButtonManager : MonoBehaviour
     public void OnNextSlide() => uiManager.OnNextSlide();
     public void OnPreviousSlide() => uiManager.OnPreviousSlide();
     public void OnStartPressed() => uiManager.OnStartPressed();
+    public void OnOptionsPressed() => uiManager.OnOptionsPressed();
+    public void OnCloseOptionsPressed() => uiManager.OnCloseOptionsPressed();
 
     // UI Resume
     // public void OnHomeButtonPressed() => homeUIManager.OnHomeButtonPressed();
