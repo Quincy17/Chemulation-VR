@@ -8,7 +8,7 @@ public class QuestionSpawner : MonoBehaviour
 
     private List<string> molecules;
 
-    void Update()
+    void Start()
     {
         // daftar molekul yang bisa muncul
         molecules = new List<string>

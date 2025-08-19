@@ -97,6 +97,11 @@ public class UIManager : MonoBehaviour
         StartCoroutine(SwitchCanvas(playCanvas, mainMenuCanvas));
     }
 
+    public void OnCloseDefaultPressed()
+    {
+        mainMenuCanvas.SetActive(false);
+    }
+
     public void OnExitYesPressed()
     {
         Application.Quit();

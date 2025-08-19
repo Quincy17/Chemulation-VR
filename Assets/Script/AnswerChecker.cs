@@ -8,14 +8,12 @@ public class AnswerChecker : MonoBehaviour
     public AtomSlotTrigger[] allSlots;
 
     [Header("UI")]
-    public TMP_Text questionText;      // teks pertanyaan (misalnya "CO2")
+    public TMP_Text questionText;
     public TMP_Text checkAtomText;
     public TMP_Text statusText;
 
-    void Start()
-    {
-        // definisi aturan jumlah atom untuk tiap molekul
-        private Dictionary<string, Dictionary<string, int>> moleculeRules = new Dictionary<string, Dictionary<string, int>>()
+    // definisi aturan jumlah atom untuk tiap molekul
+    private Dictionary<string, Dictionary<string, int>> moleculeRules = new Dictionary<string, Dictionary<string, int>>()
     {
         { "H2O", new Dictionary<string, int> { { "HAtom", 2 } } },
         { "CO2", new Dictionary<string, int> { { "OAtom", 2 } } },
@@ -32,10 +30,9 @@ public class AnswerChecker : MonoBehaviour
         { "SF6", new Dictionary<string, int> { { "FAtom", 6 } } },
     };
 
-    }
-
     void Update()
     {
+        // cek jawaban setiap frame
         CheckAnswer();
     }
 
