@@ -10,9 +10,10 @@ public class AnswerChecker : MonoBehaviour
     [Header("UI")]
     public TMP_Text questionText;
     public TMP_Text checkAtomText;
+    public TMP_Text checkLocationText;
     public TMP_Text statusText;
 
-    // definisi aturan jumlah atom untuk tiap molekul
+    // Aturan jumlah atom untuk tiap molekul
     private Dictionary<string, Dictionary<string, int>> moleculeRules = new Dictionary<string, Dictionary<string, int>>()
     {
         { "H2O", new Dictionary<string, int> { { "HAtom", 2 } } },
@@ -30,15 +31,26 @@ public class AnswerChecker : MonoBehaviour
         { "SF6", new Dictionary<string, int> { { "FAtom", 6 } } },
     };
 
+    // Aturan lokasi atom untuk tiap molekul (opsional, bisa kosong)
+    private Dictionary<string, List<List<string>>> moleculeLocations = new Dictionary<string, List<List<string>>>()
+    {
+        // Cek lokasi H2O
+        { "H2O", new List<List<string>>
+            {
+                new List<string> { "Atom 12", "Atom 10" },
+                new List<string> { "Atom 15", "Atom 17" }
+            }
+        }
+    };
+
     void Update()
     {
-        // cek jawaban setiap frame
         CheckAnswer();
     }
 
     public void CheckAnswer()
     {
-        string targetMolecule = questionText.text; // ambil nama molekul dari text
+        string targetMolecule = questionText.text;
         if (!moleculeRules.ContainsKey(targetMolecule))
         {
             Debug.LogWarning("No rule found for molecule: " + targetMolecule);
@@ -47,6 +59,8 @@ public class AnswerChecker : MonoBehaviour
 
         // hitung atom yang ada di slot
         Dictionary<string, int> userAtoms = new Dictionary<string, int>();
+        Dictionary<string, List<string>> atomLocations = new Dictionary<string, List<string>>();
+
         foreach (var slot in allSlots)
         {
             if (slot.currentAtom != null)
@@ -54,14 +68,18 @@ public class AnswerChecker : MonoBehaviour
                 string tag = slot.currentAtom.tag;
                 if (!userAtoms.ContainsKey(tag)) userAtoms[tag] = 0;
                 userAtoms[tag]++;
+
+                // simpan lokasi atom
+                if (!atomLocations.ContainsKey(tag))
+                    atomLocations[tag] = new List<string>();
+                atomLocations[tag].Add(slot.tag);
             }
         }
 
-        // ambil aturan
+        // Ambil aturan jumlah atom
         var rule = moleculeRules[targetMolecule];
-
-        // cek apakah atom sesuai
         bool atomCorrect = true;
+
         foreach (var kv in rule)
         {
             if (!userAtoms.ContainsKey(kv.Key) || userAtoms[kv.Key] != kv.Value)
@@ -71,7 +89,7 @@ public class AnswerChecker : MonoBehaviour
             }
         }
 
-        // cek kalau user punya atom asing (tidak ada di aturan)
+        // cek kalau user punya atom asing
         foreach (var kv in userAtoms)
         {
             if (!rule.ContainsKey(kv.Key))
@@ -81,11 +99,38 @@ public class AnswerChecker : MonoBehaviour
             }
         }
 
-        // update UI
+        // Cek lokasi atom
+        bool locationCorrect = true;
+        if (moleculeLocations.ContainsKey(targetMolecule))
+        {
+            locationCorrect = false; // default salah, sampai terbukti benar
+            var validLocationSets = moleculeLocations[targetMolecule];
+
+            foreach (var validSet in validLocationSets)
+            {
+                // bandingkan dengan lokasi user untuk HAtom
+                if (atomLocations.ContainsKey("HAtom"))
+                {
+                    var userSet = new HashSet<string>(atomLocations["HAtom"]);
+                    var targetSet = new HashSet<string>(validSet);
+
+                    if (userSet.SetEquals(targetSet))
+                    {
+                        locationCorrect = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        // Update UI
         checkAtomText.text = atomCorrect ? "Correct" : "Incorrect";
         checkAtomText.color = atomCorrect ? Color.green : Color.red;
 
-        if (atomCorrect)
+        checkLocationText.text = locationCorrect ? "Correct" : "Incorrect";
+        checkLocationText.color = locationCorrect ? Color.green : Color.red;
+
+        if (atomCorrect && locationCorrect)
         {
             statusText.text = "Passed";
             statusText.color = Color.green;
