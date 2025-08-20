@@ -17563,8 +17563,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObject: {fileID: 1412141023}
   rotationSpeed: 50
-  hintSlots: []
   hintMaterial: {fileID: 0}
+  questionText: {fileID: 0}
+  moleculeHints: []
 --- !u!114 &300304447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20139,8 +20140,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObject: {fileID: 1412141023}
   rotationSpeed: 50
-  hintSlots: []
   hintMaterial: {fileID: 0}
+  questionText: {fileID: 0}
+  moleculeHints: []
 --- !u!114 &332794795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22271,8 +22273,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObject: {fileID: 1412141023}
   rotationSpeed: 50
-  hintSlots: []
   hintMaterial: {fileID: 0}
+  questionText: {fileID: 0}
+  moleculeHints: []
 --- !u!1001 &355041639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82776,7 +82779,7 @@ GameObject:
   - component: {fileID: 1346159322}
   - component: {fileID: 1346159323}
   - component: {fileID: 1346159325}
-  - component: {fileID: 1346159324}
+  - component: {fileID: 1346159326}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -82948,26 +82951,6 @@ MonoBehaviour:
     ReEnterDistance: 0.02
   _closeDistanceThreshold: 0.001
   _tiebreakerScore: 0
---- !u!114 &1346159324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1346159321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbc9d50648f18df47b27e9c99158c8bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetObject: {fileID: 1412141023}
-  rotationSpeed: 50
-  hintSlots:
-  - {fileID: 1011569104}
-  - {fileID: 948619511}
-  - {fileID: 1573011261}
-  - {fileID: 462918012}
-  hintMaterial: {fileID: 2100000, guid: 7c7bf1b1fc6d6454facab3839b4e1e52, type: 2}
 --- !u!114 &1346159325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83002,7 +82985,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1346159324}
+      - m_Target: {fileID: 1346159326}
         m_TargetAssemblyTypeName: Rotator, Assembly-CSharp
         m_MethodName: ShowHint
         m_Mode: 1
@@ -83053,6 +83036,104 @@ MonoBehaviour:
   _whenSelectingInteractorViewRemoved:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1346159326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346159321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbc9d50648f18df47b27e9c99158c8bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObject: {fileID: 0}
+  rotationSpeed: 50
+  hintMaterial: {fileID: 2100000, guid: 7c7bf1b1fc6d6454facab3839b4e1e52, type: 2}
+  questionText: {fileID: 724293922}
+  moleculeHints:
+  - moleculeName: H2O
+    hintSlots:
+    - {fileID: 1011569104}
+    - {fileID: 948619511}
+    - {fileID: 1573011261}
+    - {fileID: 462918012}
+  - moleculeName: SO2
+    hintSlots:
+    - {fileID: 1011569104}
+    - {fileID: 948619511}
+    - {fileID: 1573011261}
+    - {fileID: 462918012}
+  - moleculeName: CO2
+    hintSlots:
+    - {fileID: 261890699}
+    - {fileID: 504367353}
+    - {fileID: 2092771252}
+    - {fileID: 1269116857}
+  - moleculeName: XeF2
+    hintSlots:
+    - {fileID: 88409416}
+    - {fileID: 73038284}
+  - moleculeName: BF3
+    hintSlots:
+    - {fileID: 1358851962}
+    - {fileID: 289715623}
+    - {fileID: 504367353}
+    - {fileID: 1269116857}
+    - {fileID: 2092771252}
+  - moleculeName: ClF3
+    hintSlots:
+    - {fileID: 261890699}
+    - {fileID: 88409416}
+    - {fileID: 504367353}
+    - {fileID: 1269116857}
+    - {fileID: 2092771252}
+  - moleculeName: SF6
+    hintSlots:
+    - {fileID: 261890699}
+    - {fileID: 88409416}
+    - {fileID: 504367353}
+    - {fileID: 1269116857}
+    - {fileID: 2092771252}
+    - {fileID: 73038284}
+  - moleculeName: PCl5
+    hintSlots:
+    - {fileID: 73038284}
+    - {fileID: 88409416}
+    - {fileID: 504367353}
+    - {fileID: 1358851962}
+    - {fileID: 2092771252}
+  - moleculeName: BrF5
+    hintSlots:
+    - {fileID: 73038284}
+    - {fileID: 2092771252}
+    - {fileID: 504367353}
+    - {fileID: 1269116857}
+    - {fileID: 261890699}
+  - moleculeName: XeF4
+    hintSlots:
+    - {fileID: 261890699}
+    - {fileID: 2092771252}
+    - {fileID: 504367353}
+    - {fileID: 1269116857}
+  - moleculeName: SF4
+    hintSlots:
+    - {fileID: 261890699}
+    - {fileID: 1011569104}
+    - {fileID: 948619511}
+    - {fileID: 504367353}
+  - moleculeName: CH4
+    hintSlots:
+    - {fileID: 1753062659}
+    - {fileID: 1011569104}
+    - {fileID: 73038284}
+    - {fileID: 670703267}
+  - moleculeName: NH3
+    hintSlots:
+    - {fileID: 1753062659}
+    - {fileID: 1011569104}
+    - {fileID: 670703267}
 --- !u!1001 &1348100703
 PrefabInstance:
   m_ObjectHideFlags: 0

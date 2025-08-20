@@ -25,7 +25,7 @@ public class AnswerChecker : MonoBehaviour
         { "NH3", new Dictionary<string, int> { { "HAtom", 3 } } },
         { "CH4", new Dictionary<string, int> { { "HAtom", 4 } } },
         { "SF4", new Dictionary<string, int> { { "FAtom", 4 } } },
-        { "XeF", new Dictionary<string, int> { { "FAtom", 1 } } },
+        { "XeF4", new Dictionary<string, int> { { "FAtom", 4 } } },
         { "BrF5", new Dictionary<string, int> { { "FAtom", 5 } } },
         { "PCl5", new Dictionary<string, int> { { "ClAtom", 5 } } },
         { "SF6", new Dictionary<string, int> { { "FAtom", 6 } } },
@@ -40,7 +40,72 @@ public class AnswerChecker : MonoBehaviour
                 new List<string> { "Atom 12", "Atom 10" },
                 new List<string> { "Atom 15", "Atom 17" }
             }
+        },
+        { "CO2", new List<List<string>>
+            {
+                new List<string> { "Atom 5", "Atom 22" },
+                new List<string> { "Atom 14", "Atom 13" }
+            }
+        },
+        { "SO2", new List<List<string>>
+            {
+                new List<string> { "Atom 12", "Atom 10" },
+                new List<string> { "Atom 15", "Atom 17" }
+            }
+        },
+        { "XeF2", new List<List<string>>
+            {
+                new List<string> { "Atom 16", "Atom 11" },
+            }
+        },
+        { "BF3", new List<List<string>>
+            {
+                new List<string> { "Atom 4", "Atom 8", "Atom 22" },
+                new List<string> { "Atom 14", "Atom 13" }
+            }
+        },
+        { "ClF3", new List<List<string>>
+            {
+                new List<string> { "Atom 5", "Atom 22", "Atom 11" },
+                new List<string> { "Atom 14", "Atom 13", "Atom 11" }
+            }
+        },
+        { "NH3", new List<List<string>>
+            {
+                new List<string> { "Atom 3", "Atom 10", "Atom 20" },
+            }
+        },
+        { "CH4", new List<List<string>>
+            {
+                new List<string> { "Atom 3", "Atom 10", "Atom 20", "Atom 16" },
+            }
+        },
+        { "SF4", new List<List<string>>
+            {
+                new List<string> { "Atom 12", "Atom 10", "Atom 5", "Atom 22" },
+            }
+        },
+        { "XeF4", new List<List<string>>
+            {
+                new List<string> { "Atom 13", "Atom 14", "Atom 5", "Atom 22" },
+            }
+        },
+        { "BrF5", new List<List<string>>
+            {
+                new List<string> { "Atom 13", "Atom 14", "Atom 5", "Atom 22", "Atom 16" },
+            }
+        },
+        { "PCl5", new List<List<string>>
+            {
+                new List<string> { "Atom 16", "Atom 11", "Atom 4", "Atom 14", "Atom 22" },
+            }
+        },
+        { "SF6", new List<List<string>>
+            {
+                new List<string> { "Atom 16", "Atom 11", "Atom 5", "Atom 13", "Atom 14", "Atom 22" },
+            }
         }
+        
     };
 
     void Update()

@@ -22,7 +22,7 @@ public class QuestionSpawner : MonoBehaviour
             "NH3",
             "CH4",
             "SF4",
-            "XeF",
+            "XeF4",
             "BrF5",
             "PCl5",
             "SF6"
