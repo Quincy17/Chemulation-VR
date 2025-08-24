@@ -31,81 +31,22 @@ public class AnswerChecker : MonoBehaviour
         { "SF6", new Dictionary<string, int> { { "FAtom", 6 } } },
     };
 
-    // Aturan lokasi atom untuk tiap molekul (opsional, bisa kosong)
+    // Aturan lokasi atom untuk tiap molekul
     private Dictionary<string, List<List<string>>> moleculeLocations = new Dictionary<string, List<List<string>>>()
     {
-        // Cek lokasi H2O
-        { "H2O", new List<List<string>>
-            {
-                new List<string> { "Atom 12", "Atom 10" },
-                new List<string> { "Atom 15", "Atom 17" }
-            }
-        },
-        { "CO2", new List<List<string>>
-            {
-                new List<string> { "Atom 5", "Atom 22" },
-                new List<string> { "Atom 14", "Atom 13" }
-            }
-        },
-        { "SO2", new List<List<string>>
-            {
-                new List<string> { "Atom 12", "Atom 10" },
-                new List<string> { "Atom 15", "Atom 17" }
-            }
-        },
-        { "XeF2", new List<List<string>>
-            {
-                new List<string> { "Atom 16", "Atom 11" },
-            }
-        },
-        { "BF3", new List<List<string>>
-            {
-                new List<string> { "Atom 4", "Atom 8", "Atom 22" },
-                new List<string> { "Atom 14", "Atom 13" }
-            }
-        },
-        { "ClF3", new List<List<string>>
-            {
-                new List<string> { "Atom 5", "Atom 22", "Atom 11" },
-                new List<string> { "Atom 14", "Atom 13", "Atom 11" }
-            }
-        },
-        { "NH3", new List<List<string>>
-            {
-                new List<string> { "Atom 3", "Atom 10", "Atom 20" },
-            }
-        },
-        { "CH4", new List<List<string>>
-            {
-                new List<string> { "Atom 3", "Atom 10", "Atom 20", "Atom 16" },
-            }
-        },
-        { "SF4", new List<List<string>>
-            {
-                new List<string> { "Atom 12", "Atom 10", "Atom 5", "Atom 22" },
-            }
-        },
-        { "XeF4", new List<List<string>>
-            {
-                new List<string> { "Atom 13", "Atom 14", "Atom 5", "Atom 22" },
-            }
-        },
-        { "BrF5", new List<List<string>>
-            {
-                new List<string> { "Atom 13", "Atom 14", "Atom 5", "Atom 22", "Atom 16" },
-            }
-        },
-        { "PCl5", new List<List<string>>
-            {
-                new List<string> { "Atom 16", "Atom 11", "Atom 4", "Atom 14", "Atom 22" },
-            }
-        },
-        { "SF6", new List<List<string>>
-            {
-                new List<string> { "Atom 16", "Atom 11", "Atom 5", "Atom 13", "Atom 14", "Atom 22" },
-            }
-        }
-        
+        { "H2O", new List<List<string>> { new List<string> { "Atom 12", "Atom 10" }, new List<string> { "Atom 15", "Atom 17" } } },
+        { "CO2", new List<List<string>> { new List<string> { "Atom 5", "Atom 22" }, new List<string> { "Atom 14", "Atom 13" } } },
+        { "SO2", new List<List<string>> { new List<string> { "Atom 12", "Atom 10" }, new List<string> { "Atom 15", "Atom 17" } } },
+        { "XeF2", new List<List<string>> { new List<string> { "Atom 16", "Atom 11" } } },
+        { "BF3", new List<List<string>> { new List<string> { "Atom 4", "Atom 6", "Atom 22" } } },
+        { "ClF3", new List<List<string>> { new List<string> { "Atom 5", "Atom 22", "Atom 11" }, new List<string> { "Atom 14", "Atom 13", "Atom 11" } } },
+        { "NH3", new List<List<string>> { new List<string> { "Atom 3", "Atom 10", "Atom 20" } } },
+        { "CH4", new List<List<string>> { new List<string> { "Atom 3", "Atom 10", "Atom 20", "Atom 16" } } },
+        { "SF4", new List<List<string>> { new List<string> { "Atom 12", "Atom 10", "Atom 5", "Atom 22" } } },
+        { "XeF4", new List<List<string>> { new List<string> { "Atom 13", "Atom 14", "Atom 5", "Atom 22" } } },
+        { "BrF5", new List<List<string>> { new List<string> { "Atom 13", "Atom 14", "Atom 5", "Atom 22", "Atom 16" } } },
+        { "PCl5", new List<List<string>> { new List<string> { "Atom 16", "Atom 11", "Atom 4", "Atom 14", "Atom 22" } } },
+        { "SF6", new List<List<string>> { new List<string> { "Atom 16", "Atom 11", "Atom 5", "Atom 13", "Atom 14", "Atom 22" } } }
     };
 
     void Update()
@@ -122,7 +63,7 @@ public class AnswerChecker : MonoBehaviour
             return;
         }
 
-        // hitung atom yang ada di slot
+        // Hitung atom yang ada di slot
         Dictionary<string, int> userAtoms = new Dictionary<string, int>();
         Dictionary<string, List<string>> atomLocations = new Dictionary<string, List<string>>();
 
@@ -164,26 +105,55 @@ public class AnswerChecker : MonoBehaviour
             }
         }
 
-        // Cek lokasi atom
+        // Cek lokasi atom (pakai List biar jumlah sama persis)
         bool locationCorrect = true;
         if (moleculeLocations.ContainsKey(targetMolecule))
         {
-            locationCorrect = false; // default salah, sampai terbukti benar
+            locationCorrect = false;
             var validLocationSets = moleculeLocations[targetMolecule];
 
             foreach (var validSet in validLocationSets)
             {
-                // bandingkan dengan lokasi user untuk HAtom
-                if (atomLocations.ContainsKey("HAtom"))
-                {
-                    var userSet = new HashSet<string>(atomLocations["HAtom"]);
-                    var targetSet = new HashSet<string>(validSet);
+                bool match = true;
 
-                    if (userSet.SetEquals(targetSet))
+                foreach (var kv in rule)
+                {
+                    string atomType = kv.Key;
+                    if (atomLocations.ContainsKey(atomType))
                     {
-                        locationCorrect = true;
+                        var userSet = new List<string>(atomLocations[atomType]);
+                        var targetSet = new List<string>(validSet);
+
+                        // sort biar urutan tidak masalah
+                        userSet.Sort();
+                        targetSet.Sort();
+
+                        if (userSet.Count != targetSet.Count)
+                        {
+                            match = false;
+                            break;
+                        }
+
+                        for (int i = 0; i < userSet.Count; i++)
+                        {
+                            if (userSet[i] != targetSet[i])
+                            {
+                                match = false;
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        match = false;
                         break;
                     }
+                }
+
+                if (match)
+                {
+                    locationCorrect = true;
+                    break;
                 }
             }
         }

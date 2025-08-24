@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour
     public GameObject spherePrefab;
 
     // Fixed spawn position as per your request
-    private Vector3 spawnPosition = new Vector3(-0.4033f, 1.065f, 7.531f);
+    private Vector3 spawnPosition = new Vector3(-0.6041f, 1.078f, 7.531f);
 
     // Method to spawn a sphere with a specific tag
     public void SpawnSphere(string tag)

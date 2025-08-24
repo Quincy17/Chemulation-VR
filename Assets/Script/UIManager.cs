@@ -45,7 +45,7 @@ public class UIManager : MonoBehaviour
         // StartCoroutine(SwitchCanvas(mainMenuCanvas, playCanvas));
         // currentPage = 0;
         // UpdatePlayModeSlide();
-        rigTransform.position = new Vector3(-0.971f, 0f, 8.202f);
+        rigTransform.position = new Vector3(-0.971f, 0f, 8.102f);
         rigTransform.eulerAngles = new Vector3(0, 180, 0);
     }
 
@@ -54,7 +54,7 @@ public class UIManager : MonoBehaviour
         if (rigTransform != null)
         {
             rigTransform.position = new Vector3(-0.896f, 0f, 8.138f);
-            rigTransform.rotation = Quaternion.Euler(0, 180f, 0); // atau set rotasi tertentu jika diinginkan
+            rigTransform.rotation = Quaternion.Euler(0, 180f, 0);
         }
     }
 
